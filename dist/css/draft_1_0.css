@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;300;400;500;700&display=swap');
+
+body{
+  font-family: 'pretendard'; letter-spacing: -0.02em; 
+  @apply bg-[#F1F4F5];
+}
+
+body{ @apply overflow-x-hidden ; }
+
+//-------------------------
+#hero-canvas{
+  @apply absolute w-full h-screen max-h-[640px] ;
+}
+.header{
+  @apply absolute w-full h-[80px] z-[9999];
+  .header-img {
+    @apply absolute w-[1121px] top-[20px] right-[40px] ;
+  }
+  .logo{
+    @apply absolute w-[210px] top-[24px] left-[30px];
+  }
+}
+.hero-wrap{
+  @apply absolute w-full h-[640px] flex items-center justify-center pt-[60px];
+  &::before {
+    @apply content-[''] block absolute w-full h-full
+    left-0 top-0 bg-[rgba(0,6,28,0.3)] ;
+  }
+  &::after {
+    @apply content-[''] block absolute w-full h-[32px] 
+    rounded-t-[32px] left-0 bottom-0 bg-[#F1F4F5] ;
+  }
+  .con-1{ @apply w-[1368px] z-10 ; }
+}
+
+.con-wrap{
+  @apply relative top-[640px] w-full px-[3vw] pt-[3vw] pb-[4vw];
+  .con-full-pc{
+    filter:drop-shadow(4px 4px 20px rgba(0,0,0,0.12)); 
+  }
+}
+

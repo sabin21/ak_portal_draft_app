@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+
+body{
+  font-family: 'pretendard'; letter-spacing: -0.02em;
+}
+
+html{
+  // font-size: calc(100vw / 1920 * 10);
+}
+
+body { @apply bg-[#101011] ; }
+
+.page-wrap{
+  @apply relative w-full flex ;
+  .left-wrap{
+    @apply fixed w-[260px] bg-black h-full min-h-screen pt-[30px];
+    .left-inner {
+      @apply fixed w-full left-0 top-0 ;
+    }
+  }
+  .header {
+    @apply fixed w-[1012px] right-[30px] top-[16px] z-[9999] ;
+  }
+  .right-wrap{
+    @apply relative w-[calc(100%-260px)] h-full min-h-screen ml-[260px] 
+    flex flex-nowrap overflow-y-hidden overflow-x-hidden
+    /* flex-col  */
+    ;
+  }  
+}
+
+.block {
+  @apply w-full min-w-[calc(100%-260px)] h-screen min-h-[800px] flex justify-center items-center 
+  shrink-0 ;
+  .con-full {
+    @apply w-full max-w-[1300px] ;
+  }
+}
+.waves {
+  @apply fixed w-full h-screen z-[-1] ;
+  &:after{
+    @apply content-[''] block absolute w-full h-full bg-[rgba(0,0,0,0.2)] top-0 left-0;
+  }
+}
+
